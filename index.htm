@@ -1,0 +1,152 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>jQuery Demo</title>
+
+   <script src="http://code.jquery.com/jquery-latest.js"></script>
+
+    
+	<style type="text/css">
+		.first
+		{
+			clear:both;
+			border-style : dotted;
+			border-width : .1em;
+		}
+		.second
+		{
+			clear:both;
+		}
+        .wrap
+        {
+            width: 160px;
+            height: 140px;
+            position: relative;
+            overflow: hidden;
+            float: left;
+            padding: 0 1em;
+			
+        }
+		.shrink
+        {
+            width: 160px;
+            height: 150px;
+            position: relative;
+            overflow: hidden;
+            float: left;
+            padding: 0 1em;
+			
+        }
+        img
+        {
+            position: absolute;
+            top: 0;
+            left: 0;		
+			height : 130px;
+			widht : 150px;
+			border-style:solid;
+			border-width:5px;
+			border-color:inactivecaption;
+
+			border : 4px solid inactivecaption;			
+        }
+    </style>
+
+    <script type="text/javascript">
+
+        $(function() {
+            $('.wrap').hover(function() {
+                $(this).children('.front').stop().animate(
+				{ 
+					"top": "100px"
+				},700);				
+            }, function() {
+                $(this).children('.front').stop().animate(
+				{ 
+					"top": "0px"
+				},400);
+            });
+        
+			$('.shrink').hover(function() {
+				$(this).children('.front').stop().animate(
+				{ 
+					"height": "130px" ,
+					"width": "150px" ,
+					"top": "0px" ,
+					"left": "0px" ,
+					"border-width": "4px" ,
+					"border-style": "solid"	
+				},400);
+			},function() {
+				$(this).children('.front').stop().animate(
+				{ 				
+					"height": "0px" ,
+					"width": "0px" ,
+					"top": "60px" ,
+					"left": "70px" ,
+					"border-width" : "0px" ,
+					"border-style": "none"	
+				},700);				
+			});
+        });
+
+		
+    </script>
+
+</head>
+<body>
+	
+    <div id="container">
+		<div class="first">
+			<div class="wrap">
+				<img src="1-text.jpg" alt="Image Text" />
+				<img src="1-thumb.jpg" class="front" alt="Image" />
+			</div>
+			<div class="wrap">
+				<img src="2-text.jpg" alt="Image Text" />
+				<img src="2-thumb.jpg" class="front" alt="Image" />
+			</div>
+			<div class="wrap">
+				<img src="3-text.jpg" alt="Image Text" />
+				<img src="3-thumb.jpg" class="front" alt="Image" />
+			</div>
+			<div class="wrap">
+				<img src="4-text.jpg" alt="Image Text" />
+				<img src="4-thumb.jpg" class="front" alt="Image" />
+			</div>
+			<div class="wrap">
+				<img src="5-text.jpg" alt="Image Text" />
+				<img src="5-thumb.jpg" class="front" alt="Image" />
+			</div>
+		</div>
+		
+		<div class="second">
+			<div class="shrink">
+				<img src="1-text.jpg" alt="Image Text" />
+				<img src="1-thumb.jpg" class="front" alt="Image" />
+			</div>
+			<div class="shrink">
+				<img src="2-text.jpg" alt="Image Text" />
+				<img src="2-thumb.jpg" class="front" alt="Image" />
+			</div>
+			<div class="shrink">
+				<img src="3-text.jpg" alt="Image Text" />
+				<img src="3-thumb.jpg" class="front" alt="Image" />
+			</div>
+			<div class="shrink">
+				<img src="4-text.jpg" alt="Image Text" />
+				<img src="4-thumb.jpg" class="front" alt="Image" />
+			</div>
+			<div class="shrink">
+				<img src="5-text.jpg" alt="Image Text" />
+				<img src="5-thumb.jpg" class="front" alt="Image" />
+			</div>
+		</div>
+    </div>
+
+	
+    <p> Copyright &#169; 2003 </p>
+	<p>W3C &#174; </p>
+
+</body>
+</html>
